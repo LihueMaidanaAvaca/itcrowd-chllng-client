@@ -1,0 +1,67 @@
+.every{
+    background-color: #1b1b1bdb;
+    background-repeat: repeat;
+    height: 100vh;
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.title{
+    background-color: rgb(0, 0, 0);
+    background-position: bottom;
+    font-family: 'Lobster', cursive;
+    color: #ff6512;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    font-size: 270%
+}
+
+.options{
+    font-family: 'Lobster', cursive;
+    background-color: black;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    color: #ff6512;
+    border: 2px solid;
+    border-radius: 50px;
+    /* text-decoration: none; */
+    cursor: pointer;
+    padding: 0px;
+}
+
+.options option{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+}
+
+
+.newpro{
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    color: #ff6512;
+    border: 2px solid;
+    border-radius: 50%;
+    /* text-decoration: none; */
+    cursor: pointer;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+   
+
+.newre:link, .newre:visited, .newre:active {
+    text-decoration:none;
+  }
+
+
+
+

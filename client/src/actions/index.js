@@ -77,7 +77,7 @@ export  function postNewProduct(body){
 
 export async function putProduct(id, body){
     return async function(dispatch){
-
+console.log(id)
     const response = await axios.put("/products/"+id, body);
     return dispatch({
         type: UPDATE_PRODUCT,

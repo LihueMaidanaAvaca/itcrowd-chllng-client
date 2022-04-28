@@ -56,7 +56,7 @@ export default function EditProduct(props){
     },[props.match.params.id, dispatch])
 
     
-
+console.log(myProduct)
     return(
         <div className={styles.every}>
             <Link to= '/home' ><button>Home</button></Link>

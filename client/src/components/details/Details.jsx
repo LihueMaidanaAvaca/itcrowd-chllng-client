@@ -2,13 +2,12 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getDetail, deleteProduct } from "../../actions";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import style from "./Details.module.css"
 
 export default function Detail(props){
     console.log(props)
     const dispatch = useDispatch()
-    const [stats, setStats] = useState([]);
     const history = useHistory()
 
     const myProduct = useSelector ((state)=> state.detail)
@@ -24,35 +23,33 @@ export default function Detail(props){
     
     
     
-    useEffect(() => {
-        setStats(myProduct);
-    }, [myProduct, dispatch])
+   
     
-    console.log(stats)
+    console.log(myProduct)
     return (
         <section className={style.container} >          
-         <Link to= '/home' class={style.home}>Home</Link>
-            {
-                myProduct.length>0?
+         <Link to= '/home' className={style.home}>Home</Link>
+            
+                
             <div class={style.details}>
-                    <h1 className={style.title}>{myProduct[0].name} </h1>
+                    <h1 className={style.title}>{myProduct.name} </h1>
                 <div className={style.info}>
                     
-                    <img src={myProduct[0].image_url} className={style.image_url} alt="sneaker" />
+                    <img src={myProduct.image_url} className={style.image_url} alt="sneaker" />
                     
                     <div className={style.text}>
                     
-                     <h2>U$D{myProduct[0].price}</h2>
-                     <h3>{myProduct[0].description}</h3>
+                     <h2>U$D{myProduct.price}</h2>
+                     <h3>{myProduct.description}</h3>
                      <div>
-                     <Link to={`/edit/${myProduct[0].id}`} >edit</Link>
+                     <Link to={`/edit/${myProduct.id}`} >edit</Link>
                      </div>
-                     <button onClick={()=>handleDelete(myProduct[0].id)}>delete</button>
+                     <button onClick={()=>handleDelete(myProduct.id)}>delete</button>
 
                     </div>
                 </div> 
-            </div>  :<p>Loading...</p>
-            }
+            </div>  
+            
         </section>
     )
 }

@@ -1,4 +1,4 @@
-import {GET_PRODUCTS, GET_NAMEPRODUCTS,  GET_BRANDS, FILTER_BY_BRAND, FILTER_CREATED, ORDER_BY_PRICE, GET_DETAILS } from '../actions';
+import {UPDATE_PRODUCT,DELETE_PRODUCT, POST_PRODUCT, GET_PRODUCTS, GET_NAMEPRODUCTS,  GET_BRANDS, FILTER_BY_BRAND, FILTER_CREATED, ORDER_BY_PRICE, GET_DETAILS } from '../actions';
 
 
 const initialState = {
@@ -20,11 +20,27 @@ const initialState = {
                  ...state, 
                  brands: action.payload                                          
              } 
+      case POST_PRODUCT:
+        return{
+          ...state
+        }
+      case DELETE_PRODUCT:
+        return{
+          ...state
+        }
+      case UPDATE_PRODUCT:
+        return{
+          ...state,
+          detail:action.payload
+        }
       case FILTER_BY_BRAND:
             const allProducts = state.allProducts
             
-            const brandFilter = action.payload === 'brands' ? allProducts :  allProducts.filter(el => {const aux = el.Brands?.map(brn=> brn.name);
-              if (aux?.includes(action.payload)) return el;});
+            const brandFilter = action.payload === 'brands' ? allProducts :  allProducts.filter(el => {
+              const aux = el.Brands?.map(brn=> brn.name);
+              if (aux?.includes(action.payload)) return el;
+              else return [];
+             });
             
             
             return {...state, products: brandFilter

@@ -3,10 +3,10 @@ import styles from './Paginate.module.css'
 
 
 
-export default function Paginate ({dogsPerPage, allDogs, paginate}){
+export default function Paginate ({productsPerPage, products, paginate}){
     const pageNumber= []
 
-    for (let i = 0; i <= Math.floor(allDogs/dogsPerPage); i++) {
+    for (let i = 0; i <= Math.floor(products/productsPerPage); i++) {
          pageNumber.push(i+1)
     }
     return(

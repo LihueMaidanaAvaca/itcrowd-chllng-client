@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { getProducts, filterByBrand, filterCreated, getBrands, orderByName, orderByPrice} from '../../actions';
+import { getProducts, filterByBrand,  getBrands,  orderByPrice} from '../../actions';
 import { Link } from 'react-router-dom';
 import Card from '../cards/Cards';
 import Paginate from '../paginate/Paginate';
@@ -27,11 +27,7 @@ export function Home(){
         setLoading(false)
     },[dispatch])
 
-    function handleClick(e){
-        e.preventDefault();
-        dispatch(getProducts());
-    }
-
+    
     function handleFilterBrand(e){
         dispatch(filterByBrand(e.target.value))
     }
@@ -46,7 +42,9 @@ export function Home(){
 
     useEffect(() => {
         dispatch(getBrands());
-    }, []);
+    }, [dispatch]);
+
+    console.log(orden,setProductsPerPage)
 
     return(
         <div className={styles.every}>
@@ -86,7 +84,7 @@ export function Home(){
                         <div key={product.id}>
                            <Link to={`/${product.id}`}>
                            <Card name={product.name} image_url={product.image_url} price={product.price}
-                                 brand={product.brand} logo_url={product.Brands[0].logo_url}
+                                 brand={product.brand} logo_url={product.logo_url}
                            />
                            </Link>
                        </div> 

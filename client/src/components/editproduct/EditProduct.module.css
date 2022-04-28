@@ -3,11 +3,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: rgb(255, 255, 255);
+    color: black;
 }
 
 .container{
-    background-color: rgba(153, 153, 153, 0.37);
+    background-color: rgba(160, 117, 0, 0.37);
     margin: 0px 20px 0px 20px;
     min-width: 75%;
     max-width: 800px;
@@ -26,7 +26,7 @@
     border: none;
     border-radius: 10px;
     width: 80%;
-    background-color: rgb(170, 77, 0) ;
+    background-color: rgba(160, 117, 0, 0.514) ;
     color: aliceblue;
 }
 
@@ -35,17 +35,13 @@
     margin: 0px;
 }
 
-.largetext{
-    
-}
-
 .add{
     align-items: flex-end;
     height: 50px;
     width: 150px;
-    background-color: rgb(160, 117, 0);
+    background-color: rgba(160, 117, 0, 0.514);
     border: none;
-    color: rgb(255, 255, 255);
+    color: blanchedalmond;
 }
 
 .add:hover{
